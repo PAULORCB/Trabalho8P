@@ -1,30 +1,31 @@
-######################## 1 MONTANDO DATASET   ################################################  
+######################## DATASET   ################################################  
 #Caracteristicas
-#e fofinho?
-#Tem uma orelhinha pequena?
-#Faz miau?
+#é bonito?
+#tem pequenas orelhas?
+#as unhas são retráteis?
 
 #Se SIM = 1 / Se NAO = 0
 
-animalmisterioso1 = [1, 1, 1]
-amimalmisterioso2 = [1, 0, 1]
-animalmisterioso3 = [0, 1, 1]
-animalmisteriosos4 = [1, 1, 0]
-animalmisterioso5 = [0, 1, 0]
-animalmisterioso6 = [0, 1, 0]
+animal1 = [1, 1, 1]
+animal2 = [1, 0, 1]
+animal3 = [0, 1, 1]
+animal4 = [1, 1, 0]
+animal5 = [0, 1, 0]
+animal6 = [0, 1, 0]
 
 dados = [animal1, animal2, animal3, animal4, animal5, animal6]
+
 
 #Se GATO = 1 / Se CACHORRO = -1
 marcacoes = [1, 1, 1, -1, -1, -1]
 
-######################## 2 CRIANDO MODELO   ################################################  
+######################## CRIANDO MODELO   ################################################  
 from sklearn.naive_bayes import MultinomialNB
 
 modelo = MultinomialNB()
 modelo.fit(dados, marcacoes)
 
-######################## 3 FAZENDO PREDICOES   ################################################ 
+######################## PREDICOES   ################################################ 
 animal_misterioso1 = [1, 1, 1]
 animal_misterioso2 = [1, 0, 0]
 animal_misterioso3 = [0, 0, 1]
@@ -33,7 +34,7 @@ teste = [animal_misterioso1, animal_misterioso2, animal_misterioso3]
 
 marcacoes_teste = [1, -1, 1]
 
-######################## 4 OBSERVANDO RESULTADOS   ################################################ 
+########################  RESULTADOS   ################################################ 
 resultado = modelo.predict(teste)
 
 diferencas = resultado - marcacoes_teste
